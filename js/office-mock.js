@@ -4,6 +4,19 @@
   var selection = { row: 0, col: 0 };
   var selectionHandlers = [];
   var settings = {};
+  try {
+    settings = JSON.parse(sessionStorage.getItem("datasniper.harness.settings") || "{}") || {};
+  } catch (error) {
+    settings = {};
+  }
+
+  function rememberSettings() {
+    try {
+      sessionStorage.setItem("datasniper.harness.settings", JSON.stringify(settings));
+    } catch (error) {
+      /* The harness still keeps settings in memory for this page. */
+    }
+  }
   var top = window.parent === window;
 
   function key(row, col) {
@@ -236,8 +249,10 @@
           },
           set: function (name, value) {
             settings[name] = value;
+            rememberSettings();
           },
           saveAsync: function (callback) {
+            rememberSettings();
             if (callback) callback({ status: "succeeded" });
           },
         },
@@ -255,6 +270,15 @@
             iframe.title = "DataSniper preview";
             document.body.appendChild(iframe);
           }
+          var width = Math.max(1, Math.min(100, Number(options && options.width) || 55));
+          var height = Math.max(1, Math.min(100, Number(options && options.height) || 72));
+          iframe.style.left = ((100 - width) / 2) + "%";
+          iframe.style.top = ((100 - height) / 2) + "%";
+          iframe.style.right = "auto";
+          iframe.style.width = width + "%";
+          iframe.style.height = height + "%";
+          iframe.dataset.dialogWidth = String(width);
+          iframe.dataset.dialogHeight = String(height);
           var dialog = {
             _handlers: {},
             messageChild: function (message) {
