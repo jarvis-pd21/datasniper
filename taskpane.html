@@ -1,90 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DataSniper</title>
-  <meta name="robots" content="noindex" />
-  <link rel="canonical" href="https://sheetspeed.agi-jarvis.com/datasniper/taskpane.html" />
-  <link rel="icon" href="assets/icon-32.png" />
-  <link rel="stylesheet" href="css/app.css?v=9" />
-  <script src="js/boot.js?v=9"></script>
+  <meta charset="utf-8">
+  <title>SheetSpeed</title>
+  <link rel="canonical" href="https://sheetspeed.agi-jarvis.com/">
+  <meta http-equiv="refresh" content="0; url=https://sheetspeed.agi-jarvis.com/">
+  <meta name="robots" content="noindex">
 </head>
-<body class="taskpane">
-  <div id="app">
-    <header>
-      <div class="brand">
-        <img src="assets/icon-32.png" alt="" width="28" height="28" />
-        <div>
-          <h1>DataSniper</h1>
-          <p>Snip a field once. The same box is read on every document.</p>
-        </div>
-      </div>
-      <div class="toolbar">
-        <button id="upload-btn" type="button">Upload documents</button>
-        <button id="load-samples" class="secondary" type="button">Load sample notices</button>
-        <input id="file-input" type="file" accept="application/pdf,image/png,image/jpeg,image/webp,.pdf,.png,.jpg,.jpeg,.webp" multiple />
-      </div>
-    </header>
-    <p id="host-banner" hidden>This page is not inside Excel. You can still snip documents and preview the table here. Export writes into a workbook only when the task pane is opened from Excel. Add <code>?harness=1</code> for the test workbook.</p>
-    <p id="reattach" hidden>This workbook points at <strong id="reattach-name"></strong>. That file is not stored in this browser. Choose the same filename to open it again.</p>
-    <p id="mac-tip" class="mac-tip"><span>DataSniper is ready. On Excel for Mac, open the <a id="starter-link" href="DataSniper-Starter.xlsx" download="DataSniper-Starter.xlsx">starter workbook</a>. That file is saved with this pane visible, and Excel keeps it visible when you save.</span><button id="mac-tip-dismiss" type="button">Dismiss</button></p>
-    <div class="workspace">
-      <section class="viewer-pane">
-        <div class="viewer-bar">
-          <label>Document
-            <select id="doc-select" aria-label="Document"></select>
-          </label>
-          <div class="pager">
-            <button id="prev-page" type="button">Previous</button>
-            <span id="page-label">No document</span>
-            <button id="next-page" type="button">Next</button>
-          </div>
-          <button id="open-viewer" type="button">Open large viewer</button>
-        </div>
-        <div id="viewer-scroll">
-          <p id="empty-state">Upload PDFs or images. Drag a rectangle on the first document. Each snip becomes a column, in the order of the snip list.</p>
-          <div id="viewer" hidden>
-            <canvas id="page-canvas"></canvas>
-            <div id="overlay"></div>
-          </div>
-        </div>
-      </section>
-      <aside>
-        <h2>Documents</h2>
-        <ul id="doc-list"></ul>
-        <div class="doc-actions">
-          <button id="clear-docs" class="secondary" type="button" hidden>Clear all</button>
-        </div>
-        <h2>Snips <span>Drag the handle to set column order.</span></h2>
-        <ul id="snip-list"></ul>
-        <button id="export-btn" type="button" disabled>Export to Excel</button>
-        <label class="mark-toggle"><input id="mark-low" type="checkbox" checked /> Mark low-confidence cells</label>
-        <div id="preview-wrap" hidden>
-          <h2>Last export</h2>
-          <div id="preview"></div>
-        </div>
-      </aside>
-    </div>
-    <footer>
-      <p id="status" aria-live="polite"></p>
-    </footer>
-  </div>
-  <div id="clear-confirm" class="confirm" hidden>
-    <div>
-      <p><strong>Clear every document?</strong></p>
-      <p>The exported Excel table can stay on the sheet, or it can be deleted with the documents.</p>
-      <div class="confirm-actions">
-        <button id="clear-keep" type="button">Keep the table</button>
-        <button id="clear-delete" type="button">Delete the table</button>
-        <button id="clear-cancel" class="secondary" type="button">Cancel</button>
-      </div>
-    </div>
-  </div>
-  <div id="mock-workbook" hidden>
-    <div class="mock-title">Excel workbook · harness</div>
-    <div id="mock-grid"></div>
-  </div>
-  <script type="module" src="js/taskpane.js?v=9"></script>
+<body>
+  <p>This project is now SheetSpeed: <a href="https://sheetspeed.agi-jarvis.com/">https://sheetspeed.agi-jarvis.com/</a>.</p>
 </body>
 </html>
